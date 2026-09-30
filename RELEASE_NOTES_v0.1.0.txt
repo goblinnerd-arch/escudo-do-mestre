@@ -1,0 +1,30 @@
+ESCUDO DO MESTRE v0.1.0
+RECOMEÇO LIMPO — PADRÃO KURO / GODDESS SAVE THE QUEEN
+
+Baseline:
+- Foundry VTT 12.343
+- D&D5e 4.3.6
+
+PADRÃO DE ATUALIZAÇÃO:
+manifest:
+https://github.com/goblinnerd-arch/escudo-do-mestre/releases/latest/download/module.json
+
+download desta versão:
+https://github.com/goblinnerd-arch/escudo-do-mestre/releases/download/v0.1.0/escudo-do-mestre-v0.1.0.zip
+
+ASSETS OBRIGATÓRIOS EM TODO RELEASE:
+- module.json
+- escudo-do-mestre-vX.Y.Z.zip
+- RELEASE_NOTES_vX.Y.Z.txt
+
+A branch main NÃO precisa ser atualizada a cada release para o Foundry detectar versões.
+O Foundry consulta sempre o module.json do release mais recente.
+
+ESCOPO v0.1.0:
+- Aba Grupo validada.
+- Retrato, nome, classe, nível.
+- PV e PV temporários.
+- CA.
+- Percepção Passiva.
+- Abrir ficha.
+- Localizar token.

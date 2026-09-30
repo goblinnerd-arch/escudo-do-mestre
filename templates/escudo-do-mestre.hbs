@@ -1,0 +1,99 @@
+<section class="edm-shell">
+  <header class="edm-topbar">
+    <div class="edm-brand">
+      <div class="edm-brand-icon"><i class="fas fa-shield-halved"></i></div>
+      <div>
+        <h1>Escudo do Mestre</h1>
+        <p>Sua mesa. Suas regras. Sempre à mão.</p>
+      </div>
+    </div>
+    <nav class="edm-tabs" aria-label="Áreas do Escudo">
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-mountain-sun"></i> Cena</button>
+      <button type="button" class="edm-tab is-active"><i class="fas fa-users"></i> Grupo</button>
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-skull"></i> Criaturas</button>
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-sun"></i> Iluminação</button>
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-wand-magic-sparkles"></i> Efeitos</button>
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-book"></i> Anotações</button>
+      <button type="button" class="edm-tab is-disabled" disabled><i class="fas fa-star"></i> Favoritos</button>
+    </nav>
+  </header>
+
+  <main class="edm-content">
+    <section class="edm-panel edm-group-panel">
+      <div class="edm-panel-title">
+        <div>
+          <h2><i class="fas fa-users"></i> Grupo</h2>
+          <span>{{characterCount}} personagens de jogadores</span>
+        </div>
+        <div class="edm-dev-badge">v0.1.0</div>
+      </div>
+
+      {{#if hasCharacters}}
+        <div class="edm-character-grid">
+          {{#each characters}}
+            <article class="edm-character-card" data-actor-id="{{id}}">
+              <img class="edm-portrait" src="{{img}}" alt="{{name}}">
+              <div class="edm-character-main">
+                <div class="edm-character-head">
+                  <div>
+                    <h3>{{name}}</h3>
+                    <p>{{classes}} • Nível {{level}}</p>
+                  </div>
+                  <div class="edm-card-actions">
+                    <button type="button" data-action="focus-token" data-actor-id="{{id}}" title="Localizar token na cena">
+                      <i class="fas fa-crosshairs"></i>
+                    </button>
+                    <button type="button" data-action="open-actor" data-actor-id="{{id}}" title="Abrir ficha">
+                      <i class="fas fa-file-shield"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="edm-hp-row">
+                  <div class="edm-hp-label">
+                    <span>PV</span>
+                    <strong>{{hp.value}} / {{hp.max}}</strong>
+                    {{#if hp.temp}}<em>+{{hp.temp}} temp</em>{{/if}}
+                  </div>
+                  <div class="edm-hp-track"><span style="width: {{hpPercent}}%"></span></div>
+                </div>
+                <div class="edm-stats">
+                  <div class="edm-stat">
+                    <i class="fas fa-shield"></i>
+                    <span>CA</span>
+                    <strong>{{ac}}</strong>
+                  </div>
+                  <div class="edm-stat">
+                    <i class="fas fa-eye"></i>
+                    <span>Percepção Passiva</span>
+                    <strong>{{perception}}</strong>
+                  </div>
+                </div>
+              </div>
+            </article>
+          {{/each}}
+        </div>
+      {{else}}
+        <div class="edm-empty">
+          <h3>Nenhum personagem de jogador encontrado</h3>
+        </div>
+      {{/if}}
+    </section>
+
+    <aside class="edm-side">
+      <div class="edm-side-card">
+        <h3>Primeiro protótipo</h3>
+        <p>Esta versão valida a leitura dos Actors do D&D5e e a atualização do painel em tempo real.</p>
+      </div>
+      <div class="edm-side-card">
+        <h3>Dados ativos</h3>
+        <ul>
+          <li>Retrato e nome</li>
+          <li>Classe e nível</li>
+          <li>PV e PV temporários</li>
+          <li>Classe de Armadura</li>
+          <li>Percepção Passiva</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+</section>
